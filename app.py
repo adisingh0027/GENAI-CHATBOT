@@ -17,7 +17,7 @@ os.environ["LANGCHAIN_API_KEY"] = os.getenv("LANGCHAIN_API_KEY")
 os.environ["LANGCHAIN_TRACING_V2"] = "true"
 
 # Configure Google GenAI client
-client =genai.Client(api_key="AIzaSyBqmcOUimDaB6-CmCGwlY9AoqJlEinh7-Y")
+client =genai.Client(api_key="GOOGLE_API_KEY")
 
 # Simple string parser
 class StrOutputParser(BaseOutputParser):
@@ -50,3 +50,4 @@ chain = LLMChain(llm=llm, prompt=prompt, output_parser=StrOutputParser())
 if input_text:
     response = chain.run({'question': input_text})
     st.write(response)
+
